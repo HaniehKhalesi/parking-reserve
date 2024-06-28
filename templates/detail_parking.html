@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }} - parking Detail</title>
+</head>
+<body>
+    <h1>{{ product.name }} - parking Detail</h1>
+     
+    <div>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    </div>
+    <h2>{{ product.name }}</h2>
+    <p>Price: ${{ product.price }}</p>
+    <p>limit number car: {{ product.limit_number_car }}</p>
+    <p>address: {{ product.address }}</p>
+    <p>start time work: {{ product.start_time_work }} / end time work:{{ product.end_time_work }}</p>
+    <p>features: {{ product.features }}</p>
+
+     <br/>
+    <a href="{% url 'p_list' %}">Back to parking List</a>
+</body>
+</html>

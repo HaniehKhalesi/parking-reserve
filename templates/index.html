@@ -1,0 +1,27 @@
+
+
+<h1>Welcome!</h1>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if request.user.is_authenticated %}
+  <p>{{ request.user.username }}</p>
+  <a href="{% url 'logout' %}">Logout</a>
+  <br/>
+  <a href="{% url 'booking' %}">booking</a>
+  <br/>
+  <a href="{% url 'check_out' %}"> Check Out</a>
+{% else %}
+  <a href="{% url 'login' %}">Login</a>
+  <br/>
+  <br/>
+  <a href="{% url 'signup' %}">Signup</a>
+{% endif %}
+
+<br/>
+<a href="{% url 'p_list' %}">all parking</a>

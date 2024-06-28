@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Catalog</title>
+    <style>
+        /* Add CSS styles for flex container and items */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+            justify-content: space-between; /* Space items evenly along the main axis */
+            list-style: none; /* Remove list styles */
+            padding: 0;
+        }
+ 
+        .product-item {
+            flex: 1; /* Grow to fill available space evenly */
+            max-width: 30%; /* Limit item width to avoid overcrowding */
+            margin: 10px; /* Add spacing between items */
+            border: 1px solid #ccc; /* Add a border for visual separation */
+            padding: 10px;
+            text-align: center;
+        }
+ 
+        /* Style the "Buy Now" button */
+        .buy-now-button {
+            display: block;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+     
+    <ul class="parking-list">
+        {% for product in products %}
+            <li class="product-item">
+                <a href="{% url 'p_detail' product.pk %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+                </a>
+                <h2>{{ product.name }}</h2>
+                <p>Price: ${{ product.price }}</p>
+                <p>address {{ product.address }}</p>
+                <a href="{% url 'p_detail' product.pk %}" class="buy-now-button">show detail</a>
+                {% comment %} <p>start_time_work:{{ product.start_time_work }} / end_time_work: {{ product.end_time_work }}</p> {% endcomment %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
