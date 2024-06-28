@@ -1,13 +1,13 @@
 reserve parking with django 
 
 step 1 : install requirement
-<!-- create environment in python  -->
+# create environment in python 
 - python3 -m venv env
-<!-- activate environment in python  -->
+# activate environment in python
 - cd env
 - cd Scripts
 - activate
-<!-- install requirement -->
+# install requirement 
 please back into source this project  and run this command
 - python -m pip install -r requirements.txt
 
